@@ -1,0 +1,9 @@
+def copy_string(src, dest, index=0):
+   
+    if index == len(src):
+        return dest
+    else:
+        return copy_string(src, dest + src[index], index + 1)
+source_string = "Hello, World!"
+copied_string = copy_string(source_string, "")
+print(f"Copied string: {copied_string}") 
