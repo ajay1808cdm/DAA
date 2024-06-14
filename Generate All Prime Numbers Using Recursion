@@ -1,0 +1,17 @@
+def is_prime(n, divisor=2):
+    if n <= 2:
+        return True if n == 2 else False
+    if n % divisor == 0:
+        return False
+    if divisor * divisor > n:
+        return True
+    return is_prime(n, divisor + 1)
+def generate_primes(n):
+    def collect_primes(current, primes):
+        if current > n:
+            return primes
+        if is_prime(current):
+            primes.append(current)
+        return collect_primes(current + 1, primes)  
+    return collect_primes(2, [])
+print(f"Prime numbers up to 20: {generate_primes(20)}")  # Output: Prime numbers up to 20: [2, 3, 5, 7, 11, 13, 17, 19]
