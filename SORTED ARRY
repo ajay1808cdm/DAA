@@ -1,0 +1,20 @@
+def sortArrayByParityII(nums):
+    evens = [num for num in nums if num % 2 == 0]
+    odds = [num for num in nums if num % 2 != 0]
+    
+    sorted_array = [0] * len(nums)
+    even_index, odd_index = 0, 1
+    
+    for num in evens:
+        sorted_array[even_index] = num
+        even_index += 2
+    
+    for num in odds:
+        sorted_array[odd_index] = num
+        odd_index += 2
+    
+    return sorted_array
+
+
+nums = [4, 2, 5, 7]
+print(sortArrayByParityII(nums))  # Output might be [4, 5, 2, 7] or any valid configuration
