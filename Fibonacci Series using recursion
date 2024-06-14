@@ -1,0 +1,14 @@
+def fibonacci(a):
+    if a <= 0:
+        return 0
+    elif a == 1:
+        return 1
+    else:
+        return fibonacci(a - 1) + fibonacci(a - 2)
+
+def print_fibonacci_series(num_terms):
+    for i in range(num_terms):
+        print(fibonacci(i), end=' ')
+num_terms = 10
+print_fibonacci_series(num_terms)  
+
