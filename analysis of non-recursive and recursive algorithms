@@ -1,0 +1,26 @@
+ Non-Recursive Algorithm (Iterative Approach)
+def factorial_iterative(n):
+    if n < 0:
+        return None  # Factorial is not defined for negative numbers
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+n = 5
+factorial_result = factorial_iterative(n)
+print(f"Factorial of {n} (iterative): {factorial_result}")
+
+
+
+ Recursive Algorithm
+
+def factorial_recursive(n):
+    if n < 0:
+        return None  # Factorial is not defined for negative numbers
+    if n == 0:
+        return 1  # Base case
+    return n * factorial_recursive(n - 1)
+n = 5
+factorial_result = factorial_recursive(n)
+print(f"Factorial of {n} (recursive): {factorial_result}")
+
