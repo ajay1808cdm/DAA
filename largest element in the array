@@ -1,0 +1,17 @@
+def get_largest_element(arr):
+    if len(arr) == 0:
+        return None  
+
+    
+    largest = arr[0]
+
+    
+    for num in arr:
+        if num > largest:
+            largest = num
+
+    return largest
+
+
+array = [3, 5, 7, 2, 8, -1, 4, 10, 12]
+print("The largest element in the array is:", get_largest_element(array))  # Output: The largest element in the array is: 12
