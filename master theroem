@@ -1,0 +1,29 @@
+import math
+
+def master_theorem_recurrence(n):
+    if n == 1:
+        return 1  # Base case
+
+    # Applying Master Theorem for T(n) = 2 * T(n/2) + n
+    a = 2
+    b = 2
+    k = 1  # f(n) = n = n^k where k = 1
+
+  
+    log_b_a = math.log2(a)
+    if log_b_a == 1:
+        return n * math.log2(n)  # Case 2 of Master Theorem
+
+    
+    if k < log_b_a:
+        return n**log_b_a  # Case 1 of Master Theorem
+    elif k == log_b_a:
+        return n**log_b_a * math.log2(n)  # Case 2 of Master Theorem
+    else:  # k > log_b_a
+        return n**k  # Case 3 of Master Theorem
+
+
+n = 16
+result_master = master_theorem_recurrence(n)
+print(f"Master Theorem result for n = {n}: T(n) = {result_master}")
+
