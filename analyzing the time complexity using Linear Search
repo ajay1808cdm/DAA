@@ -1,0 +1,8 @@
+def linear_search(arr, target):
+    for num in arr:
+        if num == target:
+            return True
+  
+arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+target = 5
+print(f"Linear search result for target {target}: {linear_search(arr, target)}")
